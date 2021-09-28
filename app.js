@@ -8,10 +8,10 @@ const db = level('./db', {valueEncoding: 'json'});
 app.use(express.static('public'));
 
 
-// app.get('/movies/:id', (req, res) => {
-//     console.log(req.params)
-//     res.sendFile(__dirname + '/index.html')
-// });
+app.get('/', (req, res) => {
+    console.log(req.params)
+    res.sendFile(__dirname + '/index.html')
+});
 
 app.get('/movies', (req, res) => {
     res.status(200).json(movies)
