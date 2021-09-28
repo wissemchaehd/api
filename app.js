@@ -13,28 +13,28 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-app.get('/movies', (req, res) => {
-    res.status(200).json(movies)
-});
-app.post('/movies', (req, res) => {
-    db.put(req.params.id, req.body)
-    db.get(req.body.id,)
-
-    console.log(req.body)
-    res.status(201).json(req.body);
-});
-
-app.put('/movies/:id', (req, res) => {
-    db.put(req.params.id, req.body)
-    console.log(req.body)
-    res.status(200).json(req.body);
-});
-
-app.delete('/movies/:id', (req, res) => {
-    db.del(req.params.id)
-    res.status(200).json("movie is deleted");
-    console.log("movie is deleted")
-});
+// app.get('/movies', (req, res) => {
+//     res.status(200).json(movies)
+// });
+// app.post('/movies', (req, res) => {
+//     db.put(req.params.id, req.body)
+//     db.get(req.body.id,)
+//
+//     console.log(req.body)
+//     res.status(201).json(req.body);
+// });
+//
+// app.put('/movies/:id', (req, res) => {
+//     db.put(req.params.id, req.body)
+//     console.log(req.body)
+//     res.status(200).json(req.body);
+// });
+//
+// app.delete('/movies/:id', (req, res) => {
+//     db.del(req.params.id)
+//     res.status(200).json("movie is deleted");
+//     console.log("movie is deleted")
+// });
 
 
 // ajouter listes
@@ -51,7 +51,7 @@ app.get('/lists/:id', async (req,res) => {
     console.log(list)
     res.status(201).json(list);
 })
-
+// ajouter film
 app.post('/lists/:id/listmovie', async (req,res)=>{
 
     let list=await db.get(req.params.id)
@@ -62,7 +62,16 @@ app.post('/lists/:id/listmovie', async (req,res)=>{
 
 })
 
+// update
 
+//Update a  list
+app.put('/lists/:list_id', (req,res) => {
+    db.put(req.params.list_id, req.body)
+
+
+    console.log(req.body)
+    res.status(200).json(req.body);
+});
 
 app.delete('/lists/:id', (req,res) => {
     db.del(req.params.id)
