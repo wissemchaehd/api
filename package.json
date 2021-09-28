@@ -1,7 +1,6 @@
 {
   "name": "app1",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "app": "^0.1.0",
@@ -13,5 +12,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wissemchaehd/api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wissemchaehd/api/issues"
+  },
+  "homepage": "https://github.com/wissemchaehd/api#readme",
+  "description": ""
 }
